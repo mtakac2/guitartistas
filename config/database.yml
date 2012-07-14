@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: utf-8
+  host: localhost
+  database: guitartistas_development
+  pool: 5
+  username: guitartistas
+  password: 123456
+
+test:
+  adapter: postgresql
+  encoding: utf-8
+  host: localhost
+  database: guitartistas_test
+  pool: 5
+  username: guitartistas
+  password: 123456
+
+production:
+  adapter: postgresql
+  encoding: utf-8
+  database: guitartistas_production
+  host: localhost
+  pool: 5
+  username: guitartistas_production
+  password: and3quec]
