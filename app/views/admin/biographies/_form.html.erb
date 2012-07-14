@@ -1,0 +1,33 @@
+<%= form_for ([:admin, @biography]),
+  :html => { :multipart => true } do |f| %>
+  <fieldset class="inputs">
+    <ol>
+      <li>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </li>
+      <li>
+        <%= f.label :content %>
+        <%= f.text_area :content %>
+      </li>
+      <li>
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </li>
+      <li>
+        <%= f.label :slug %>
+        <%= f.text_field :slug %>
+      </li>
+    </ol>        
+  </fieldset>
+  <fieldset class="buttons">
+    <ol>
+      <li class="commit button">
+        <%= f.submit %>
+      </li>
+      <li class="cancel">
+        <%= link_to 'Cancel', admin_biographies_path %>
+      </li>
+    </ol>
+  </fieldset>
+<% end %>
