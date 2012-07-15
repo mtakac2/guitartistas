@@ -1,0 +1,74 @@
+<div class="panel">
+  <h3>Album details</h3>
+  <div class="panel_contents">
+    <div id="attributes_table_album_<%= @album.id %>" class="attributes_table album">
+      <table cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <th>Id</th>
+            <td><%= @album.id %></td>
+          </tr>
+          <tr>
+            <th>Title</th>
+            <td><%= @album.title %></td>
+          </tr>
+          <tr>
+            <th>Description</th>
+            <td><%= @album.description %></td>
+          </tr>
+          <tr>
+            <th>Created at</th>
+            <td><%= @album.created_at %></td>
+          </tr>
+          <tr>
+            <th>Updated at</th>
+            <td><%= @album.updated_at %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <h3>Photos</h3>
+  <div class="panel_contents">
+
+    <% if @album.photos.empty? %>
+      <div class="blank_slate_container">
+        <span class="blank_slate">There are no Photos yet.
+          <%= link_to 'Create one', new_admin_album_photo_path(@album) %>
+        </span>
+      </div>
+    <% end %>
+
+    <% if !@album.photos.empty? %>
+      <div class="photos-wrapper">
+        <div class="photos-center">
+        <% count = 0 %>
+        <% @album.photos.each do |photo| %>
+          <% count += 1 %>          
+          <div class="photo-wrapper <%= 'last-in-row' if count % 7 == 0 %>">
+            <div class="photo-actions">
+              <%= link_to 'View', admin_album_photo_path(@album, photo) %>
+              <%= link_to 'Edit', edit_admin_album_photo_path(@album, photo) %>              
+              <%= link_to 'Delete', admin_album_photo_path(@album, photo),
+                method: :delete, confirm: 'Are you sure?' %>
+            </div>
+            <% unless photo.id == @album.cover_photo_id %>
+            <div class="set-cover">
+              <%= link_to 'Cover', "#", :class => 'cover', 'data-photo_id' => photo.id,
+                'data-album_id' => @album.id %>
+            </div>
+            <% end %>
+              <%= link_to(image_tag(photo.image_url(:thumb).to_s),
+                photo.image_url(:norm).to_s) %>                                    
+          </div>        
+        <% end %>
+        <div class="clear"></div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
