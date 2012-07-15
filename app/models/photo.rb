@@ -4,4 +4,6 @@ class Photo < ActiveRecord::Base
   belongs_to :album
 
   mount_uploader :image, PhotoUploader
+
+  validates_presence_of :title, :image, :album_id
 end

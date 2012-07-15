@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120715011934) do
+ActiveRecord::Schema.define(:version => 20120715013902) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -99,5 +99,25 @@ ActiveRecord::Schema.define(:version => 20120715011934) do
   end
 
   add_index "photos", ["title"], :name => "photos_title"
+
+  create_table "recordings", :force => true do |t|
+    t.string   "title",       :null => false
+    t.text     "description"
+    t.string   "url",         :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "recordings", ["title"], :name => "recordings_title", :unique => true
+
+  create_table "videos", :force => true do |t|
+    t.string   "title",       :null => false
+    t.text     "description"
+    t.string   "url",         :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "videos", ["title"], :name => "videos_title", :unique => true
 
 end
