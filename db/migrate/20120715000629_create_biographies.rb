@@ -4,7 +4,7 @@ class CreateBiographies < ActiveRecord::Migration
       t.string :title, :null => false
       t.text :content, :null => false
       t.string :image
-      t.string :slug, :null => false
+      t.string :slug,  :null => false
 
       t.timestamps
     end
