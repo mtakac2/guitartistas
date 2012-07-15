@@ -1,0 +1,29 @@
+<%= form_for ([:admin, @album, @photo]),
+  :html => { :multipart => true } do |f| %>
+  <fieldset class="inputs">
+    <ol>
+      <li>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </li>
+      <li>
+        <%= f.label :caption %>
+        <%= f.text_field :caption %>
+      </li>
+      <li>
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </li>      
+    </ol>        
+  </fieldset>
+  <fieldset class="buttons">
+    <ol>
+      <li class="commit button">
+        <%= f.submit %>
+      </li>
+      <li class="cancel">
+        <%= link_to 'Cancel', admin_album_path(@album) %>
+      </li>
+    </ol>
+  </fieldset>
+<% end %>

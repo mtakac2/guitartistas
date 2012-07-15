@@ -1,0 +1,45 @@
+<div class="panel">
+  <h3>Photo details</h3>
+  <div class="panel_contents">
+    <div id="attributes_table_photo_<%= @photo.id %>" class="attributes_table album">
+      <table cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <th>Id</th>
+            <td><%= @photo.id %></td>
+          </tr>
+          <tr>
+            <th>Album</th>
+            <td>
+              <%= link_to @photo.album.title, 
+                admin_album_path(@photo.album) %>
+            </td>
+          </tr>
+          <tr>
+            <th>Title</th>
+            <td><%= @photo.title %></td>
+          </tr>
+          <tr>
+            <th>Caption</th>
+            <td><%= @photo.caption %></td>
+          </tr>
+          <tr>
+            <th>Created at</th>
+            <td><%= @photo.created_at %></td>
+          </tr>
+          <tr>
+            <th>Updated at</th>
+            <td><%= @photo.updated_at %></td>
+          </tr>
+          <tr>
+            <th>Image</th>
+            <td>
+              <%= link_to(image_tag(@photo.image_url(:thumb).to_s), 
+                  @photo.image_url(:norm).to_s) %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
