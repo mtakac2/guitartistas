@@ -1,0 +1,163 @@
+/* Customized Responsive Styles */
+
+/*************************************** Portrait tablets ************************************************/
+@media (min-width: 768px) and (max-width: 979px) {
+  body{
+    position: relative;
+  }
+
+   #main{
+    margin-top:0px !important;
+  }
+
+  .container{
+    width: 90% !important;
+    margin: auto;
+  }
+
+  #menuHolder{
+    position: relative;
+    width: 100% !important;
+  }
+
+  #header{
+    margin-top: 40px;
+  }
+
+  #header .span5{
+    width: 230px;
+    margin-top: 20px !important;
+  }
+
+  #header .span5 h2{
+    font-size: 18px !important;
+  }
+
+  #wrapper{
+    margin-top: 0px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .navbar{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+  }
+
+  #navbar {
+    height: 40px;
+    background-image: none;
+    background-color: rgba(0, 0, 0, 0.6); 
+    box-shadow: 0;
+    padding:0px !important;
+  }
+
+  #navItem{
+    width: 100% !important;
+    margin: 0px !important;
+  }
+
+  #navItem a{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  .row-fluid [class*="span"] {
+    margin-left: 1.5% !important;
+  }
+
+  .span3 > div{
+    padding-top: 20px !important;
+  }
+
+  #footer{
+    position: absolute;
+    top: 102.5%;
+    left: 20px;
+    width: 100%;
+  }
+}
+
+
+/*************************************** Smartphones to tablets ************************************************/
+@media (max-width: 767px){
+  #header{
+    margin-top: 30px;
+    height: 120px !important;
+  }
+
+  .navbar{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+  }
+
+  #logo{
+    display: block;
+  }
+
+  #header .span5{
+    width: 230px !important;
+    margin: 0px 0px 0px 0px !important;
+  }
+
+  #header .span5 h2{
+    font-size: 18px !important;
+  }
+
+  #lng{
+    margin: 0px !important;
+  }
+
+  .span3 > div{
+    padding-top: 10px !important;
+  }
+
+  #footer{
+    position: absolute;
+    top: 97.5%;
+    left: 0px;
+    width: 100%;
+  }
+}
+
+
+/*************************************** Smartphones ************************************************/
+@media (max-width: 480px) { 
+
+  body{
+    padding: 0px !important;
+  }
+
+  .container{
+    width: 100% !important;
+  }
+
+  #lng{
+    display: none !important;
+  }
+
+  #lngDropdown{
+    display: block !important;
+  }
+
+  #lngDropdown ul{    
+    list-style: none !important;
+  }
+
+  #lngDropdown li{
+    margin: 0px 2px;
+    width: auto;
+    display: inline;
+    float: left;
+  }
+
+  #lngDropdown a{
+    text-decoration: none;
+    color: #CCCCCC !important;
+    margin: 0px;
+    padding: 0px;
+  }
+}

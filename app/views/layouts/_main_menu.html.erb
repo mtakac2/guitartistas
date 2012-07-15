@@ -1,0 +1,23 @@
+<div id="main-menu">
+  <ul>
+    <li class="submenu">
+      <%= link_to 'Biographies', '#', :class => 'blind', :id => 'biographies-link' %>
+      <ul id="biographies-list">
+        <% @biographies.each do |biography| %>
+          <li><%= link_to biography.title, "/biographies/#{biography.slug}",
+            :class => 'ajax' %></li>
+        <% end %>
+      </ul>
+    </li>
+    <li><%= link_to 'Performances', '/performances', :class => 'ajax' %></li>
+    <li class="submenu">
+      <%= link_to 'Multimedia', '#', :class => 'blind', :id => 'multimedia-link' %>
+      <ul id="multimedia-list">
+        <li><%= link_to 'Gallery', '#', :class => 'ajax' %></li>
+        <li><%= link_to 'Recordings', '#', :class => 'ajax' %></li>
+        <li><%= link_to 'Videos', '#', :class => 'ajax' %></li>
+      </ul>
+    </li>
+    <li><%= link_to 'Contact', '/contact', :class => 'ajax' %></li>
+  </ul>
+</div>

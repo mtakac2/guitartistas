@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Guitartistas</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Guitartistas</title>
+    
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
 
-<%= yield %>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-</body>
+  </head>
+  <body>
+
+    <div id="main" class="container">
+
+      <!-- display flash messages -->
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, raw(msg), id: "flash_#{name}" %>
+      <% end %>    
+     
+      <!--  header -->
+      <div id="header" class="row">
+        <div class="span12">
+          <div id="logo">
+            <%= link_to(image_tag('logo.png'), root_path, :class => 'ajax') %>
+          </div>
+        </div>
+      </div>
+
+      <!-- wrapper -->
+      <div id="wrapper">
+        <div id="wrapperBgr">     <!-- div sets wrappers background -->
+
+          <!--  navigation -->             
+          <%= render :partial => 'layouts/main_menu' %>
+         
+          <div class="row" id="main-content">
+            <%= yield %>
+          </div>
+
+        </div>  
+      </div>
+      
+      <!-- footer -->
+      <div class="row" id="footer">
+        <div class="span12">
+          <p>&copy; Copyright GuitArtistas 2012</p>
+        </div>
+      </div>  
+    </div>    
+  </body>
 </html>

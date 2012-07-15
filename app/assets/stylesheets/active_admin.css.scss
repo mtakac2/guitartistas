@@ -4,3 +4,86 @@
 
 // To customize the Active Admin interfaces, add your
 // styles here:
+
+div.album-wrapper {
+  float: left;
+  margin-right: 60px;
+  margin-bottom: 36px;
+  width: 158px;
+
+  img {
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 3px;
+    background-color: #fefefe;
+
+    &:hover {
+      border: 1px solid #888;      
+      background-color: #fff;
+    }
+  }  
+}
+
+div.actions {
+  text-align: right;
+}
+
+#index_footer {
+  clear: both;
+}
+
+.clear {
+  clear: both;
+}
+
+div.photos-wrapper {
+  text-align: center;
+
+  div.photos-center {
+    display: inline-block;
+  }
+
+  div.photo-wrapper {    
+    float: left;
+    margin-right: 50px;
+    margin-bottom: 18px;
+    width: 158px;
+    position: relative;
+
+    div.photo-actions {
+      position: absolute;
+      background: #fff;
+      opacity: 0.7;
+      top: 0;
+      right: 0;
+      padding: 4px 4px 1px;
+      border: 1px solid #ddd;
+    }
+
+    div.set-cover {
+      position: absolute;
+      background: #fff;
+      opacity: 0.7;      
+      right: 0;
+      bottom: 0;
+      padding: 4px 4px 1px;
+      border: 1px solid #ddd;
+    }
+  }
+
+  div.last-in-row {
+    margin-right: 0 !important;
+  }
+
+  img {
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 3px;
+    background-color: #fefefe;
+
+    &:hover {
+      border: 1px solid #888;      
+      background-color: #fff;
+    }
+  }
+}
