@@ -1,0 +1,33 @@
+<%= form_for ([:admin, @event]),
+  :html => { :multipart => true } do |f| %>
+  <fieldset class="inputs">
+    <ol>
+      <li>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </li>
+      <li>
+        <%= f.label :start_time %>
+        <%= f.text_field :start_time %>
+      </li>
+      <li>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+      </li>
+      <li>
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </li>      
+    </ol>        
+  </fieldset>
+  <fieldset class="buttons">
+    <ol>
+      <li class="commit button">
+        <%= f.submit %>
+      </li>
+      <li class="cancel">
+        <%= link_to 'Cancel', admin_events_path %>
+      </li>
+    </ol>
+  </fieldset>
+<% end %>

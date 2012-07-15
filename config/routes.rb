@@ -1,4 +1,5 @@
-Guitartistas::Application.routes.draw do
+Guitartistas::Application.routes.draw do  
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -6,6 +7,6 @@ Guitartistas::Application.routes.draw do
   root :to => 'pages#home'
 
   match 'biographies/:slug' => 'biographies#show'
-
-  match 'contact' => 'pages#contact'
+  match 'performances'      => 'events#index'
+  match 'contact'           => 'pages#contact'
 end

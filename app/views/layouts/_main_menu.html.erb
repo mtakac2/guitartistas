@@ -3,9 +3,11 @@
     <li class="submenu">
       <%= link_to 'Biographies', '#', :class => 'blind', :id => 'biographies-link' %>
       <ul id="biographies-list">
-        <% @biographies.each do |biography| %>
-          <li><%= link_to biography.title, "/biographies/#{biography.slug}",
-            :class => 'ajax' %></li>
+        <% unless @biographies.nil? %>
+          <% @biographies.each do |biography| %>
+            <li><%= link_to biography.title, "/biographies/#{biography.slug}",
+              :class => 'ajax' %></li>
+          <% end %>
         <% end %>
       </ul>
     </li>
