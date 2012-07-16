@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+  <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+  <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+  <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+      
     <title>Guitartistas</title>
-    
+      
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -16,46 +21,45 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
   </head>
+
   <body>
+    <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-    <div id="main" class="container">
+    <div id="header-container">
+      <header class="wrapper clearfix">
+        <section id="logo">
+          <%= link_to((image_tag 'logo.png'), root_path, :class => 'ajax') %>
+        </section>
+        <%= render 'layouts/main_menu' %>
+      </header>
+    </div>
 
+    <div id="main-container">
+      
       <!-- display flash messages -->
       <% flash.each do |name, msg| %>
         <%= content_tag :div, raw(msg), id: "flash_#{name}" %>
-      <% end %>    
-     
-      <!--  header -->
-      <div id="header" class="row">
-        <div class="span12">
-          <div id="logo">
-            <%= link_to(image_tag('logo.png'), root_path, :class => 'ajax') %>
-          </div>
-        </div>
-      </div>
+      <% end %>
 
-      <!-- wrapper -->
-      <div id="wrapper">
-        <div id="wrapperBgr">     <!-- div sets wrappers background -->
+      <div id="main" class="wrapper clearfix">              
 
-          <!--  navigation -->             
-          <%= render :partial => 'layouts/main_menu' %>
-         
-          <div class="row" id="main-content">
-            <%= yield %>
-          </div>
+        <%= yield %>       
+        
+      </div> <!-- #main -->
+    </div> <!-- #main-container -->
 
-        </div>  
-      </div>
-      
-      <!-- footer -->
-      <div class="row" id="footer">
-        <div class="span12">
-          <p>&copy; Copyright GuitArtistas 2012</p>
-        </div>
-      </div>  
-    </div>    
+    <div id="footer-container">
+      <footer class="wrapper">
+        <h3>footer</h3>
+      </footer>
+    </div>
+
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
   </body>
 </html>

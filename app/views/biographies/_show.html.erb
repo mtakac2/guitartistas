@@ -1,2 +1,12 @@
-<h1><%= @biography.title %></h1>
-<%= @biography.content %>
+<header>      
+  <h1><%= @biography.title %></h1>              
+</header>
+
+<% unless @biography.image.blank? %>
+  <%= link_to(image_tag(@biography.image_url(:thumb).to_s, 
+    :class => 'frame left'), '#') %>
+<% end %>
+
+<p>
+  <%= @biography.content %>
+</p>

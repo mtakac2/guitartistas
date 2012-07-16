@@ -6,7 +6,8 @@ Guitartistas::Application.routes.draw do
 
   root :to => 'pages#home'
 
-  match 'biographies/:slug' => 'biographies#show'
-  match 'performances'      => 'events#index'
+  match 'biographies'       => 'biographies#index'
+  match 'biographies/:slug' => 'biographies#index'
+  match 'events'            => 'events#index'
   match 'contact'           => 'pages#contact'
 end

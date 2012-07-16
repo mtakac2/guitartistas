@@ -1,27 +1,23 @@
-//Bootstrap
+/* 
+ * Custom stylesheets for guitartistas.net
+ * Author: Marek Takac
+ * Created: 2012/07/16
+ */
 
+/* import bootsratp styles */
 // Core variables and mixins
 @import "bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
 @import "bootstrap/mixins";
 
-
 // CSS Reset
 @import "bootstrap/reset";
 
-// Grid system and page structure
-@import "bootstrap/scaffolding";
-@import "bootstrap/grid";
-@import "bootstrap/layouts";
-
 // Base CSS
 @import "bootstrap/type";
-@import "bootstrap/code";
 @import "bootstrap/forms";
-@import "bootstrap/tables";
 
 // Components: common
 @import "bootstrap/sprites";
-@import "bootstrap/dropdowns";
 @import "bootstrap/wells";
 @import "bootstrap/component-animations";
 @import "bootstrap/close";
@@ -29,152 +25,83 @@
 // Components: Buttons & Alerts
 @import "bootstrap/buttons";
 @import "bootstrap/button-groups";
-@import "bootstrap/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
 
 // Components: Nav
 @import "bootstrap/navs";
 @import "bootstrap/navbar";
 @import "bootstrap/breadcrumbs";
-@import "bootstrap/pagination";
-@import "bootstrap/pager";
-
-// Components: Popovers
-@import "bootstrap/modals";
-@import "bootstrap/tooltip";
-@import "bootstrap/popovers";
 
 // Components: Misc
-@import "bootstrap/thumbnails";
-@import "bootstrap/labels-badges";
-@import "bootstrap/progress-bars";
-@import "bootstrap/accordion";
 @import "bootstrap/carousel";
 @import "bootstrap/hero-unit";
 
 // Utility classes
 @import "bootstrap/utilities"; // Has to be last to override when necessary
 
-// MEDIA QUERIES
-// ------------------
-
-// Phones to portrait tablets and narrow desktops
-@import "bootstrap/responsive-767px-max";
-
-// Tablets to regular desktops
-@import "bootstrap/responsive-768px-979px";
-
-
-// RESPONSIVE NAVBAR
-// ------------------
-
-// From 979px and below, show a button to toggle navbar contents
-@import "bootstrap/responsive-navbar";
-
-// RESPONSIVE CLASSES
-// ------------------
-
-@import "bootstrap/responsive-utilities";
-
-/* Custom styles for GuitArtistas */ 
-
-/*--------------- General styles ---------------*/
-body{
-  line-height: 20px;
-  background-color: #4D2D24;
-  color: #CCCCCC;
+body {
+  background-color: #BE2331;
 }
 
-.container {
-  max-width: 940px;
+#main-container {
+  min-height: 500px;
+  background-color: #E0B4B7;
 }
 
- #main{
-  margin-top:10px;
+#logo {
+  padding: 18px 0;  
 }
 
-.row{
-  margin: 0px;
+.carousel {  
+  a {
+    text-decoration: none;
+  }
 }
 
-/*--------------- Header styles ---------------*/
-#logo{
-  height: 85px;
-  margin-left: 0;
-}
-
-#header .span12{
-  margin: 0;
-}
-
-#lng{
-  margin-top: 65px;
-  float: right;
-}
-
-#lng li{
-  margin: 0px 2px;
-  width: auto;
-  display: inline;
-  float: right;
-}
-
-#lng a{
-  color: #CCCCCC;
-  text-decoration: none;
-  margin: 0px;
-  padding: 0px;
-  display: inline;
-  float: left;
-}
-
-#lngDropdown{
-  display: none;
-}
-
-/*--------------- Wrapper styles ---------------*/
-#wrapper{
-  height: 680px;  
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  box-shadow: 0px 0px 15px #000000;
-  background: url(image_path('homeBackground_01.jpg')) no-repeat;
-}
-
-#wrapperBgr{
+#main article.full-length {
   width: 100%;
-  height: 100%;
-  border-radius: 5px;  
 }
 
+nav.vertical {
+  background-color: #BE2331;
+  border-top: 20px solid #8B1B24;
 
-.row-fluid [class*="span"] {
-  margin-left: 1.5%;
+  ul {
+
+    li {
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          background-color: #D76A74 !important;
+        }
+
+        i {
+          vertical-align: middle;
+        }
+      }
+    }
+  }  
 }
 
-.span3{
-  margin-left: 15px;
-}
-
-.span3 > div{
-  padding: 0px 10px;
-}
-
-/*--------------- Footer styles ---------------*/
-#footer{
-  height: 30px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-#footer > .span12{
-  margin-left: 0px;  
-}
-
-#footer p{
-  width: 100%;
+ul.breadcrumb {
+  background: none;
+  background-color: #E0B4B7;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 12px;    
   margin: 0;
-  padding-top: 4px;
-  text-align: center;
+  padding: 0;
+  position: relative;
+  top: -16px;
+
+  span.divider {
+    color: #888;
+  }
+}
+
+img {
+  margin: 0 10px 5px 0;  
 }

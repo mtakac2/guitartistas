@@ -1,1 +1,26 @@
-<h1>Performances</h1>
+<!-- breadcrumbs -->
+<ul class="breadcrumb">
+  <li>
+    <%= link_to 'Home', root_path %> <span class="divider">/</span>
+  </li>
+  <li class="active">Events</li>
+</ul>
+
+<% @events.each do |event| %>
+  <article class="event clearfix">
+    <header>      
+    <h2><%= event.title %></h2>              
+    </header>
+
+    <% unless event.image.blank? %>
+      <%= link_to(image_tag(event.image_url(:thumb).to_s, 
+        :class => 'frame left'), '#') %>
+    <% end %>
+
+    <span><%= event.start_time %></span>
+
+    <p>
+      <%= event.description %>
+    </p>
+  </article>
+<% end %>
