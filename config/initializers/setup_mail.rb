@@ -3,7 +3,7 @@ ActionMailer::Base.smtp_settings = {
   :port                 => 587,
   :domain               => 'guitartistas.herokuapp.com',
   :user_name            => 'guitartistas@gmail.com', # full email address (user@your.host.name.com)
-  :password             => 'password',
+  :password             => 'neustart',
   :authentication       => 'plain',
   :enable_starttls_auto => true
 }
