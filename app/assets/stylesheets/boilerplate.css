@@ -8,15 +8,15 @@ audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+html, button, input, select, textarea { font-family: sans-serif; color: #efefef; }
 body { margin: 0; font-size: 1em; line-height: 1.4; }
 
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a { color: #EAE482; }
+a:visited { color: #9D9957; }
+a:hover { color: #EAE482; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 
@@ -84,14 +84,14 @@ body{ font:16px/26px Helvetica, Helvetica Neue, Arial; background-color: #E0B4B7
     ALL: Orange Theme
    =================== */
 
-#header-container{ border-bottom: 20px solid #8B1B24; }
-#footer-container{ border-top:    20px solid #8B1B24; }
-#main aside      { border-top:    20px solid #8B1B24; }
+#header-container{ border-bottom: 20px solid #2B1A33; }
+#footer-container{ border-top:    20px solid #2B1A33; }
+#main aside      { border-top:    20px solid #2B1A33; }
 
 #header-container,
 #footer-container,
 #main aside{
-  background:#BE2331;
+  background:#1C1121;
 }
 
 #title{ color:white; }
@@ -108,16 +108,11 @@ nav.horizontal a{
   margin-bottom:10px;
   padding:15px 0;
 
-  background:#D76A74;
-  color:white;
+  background:#3A2A52;
 
   text-align:center;
   text-decoration:none;
   font-weight:bold;
-}
-
-nav.horizontal a:hover, nav.horizontal a:visited{
-  color:white;
 }
 
 nav.horizontal a:hover{

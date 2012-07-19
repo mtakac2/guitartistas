@@ -8,8 +8,8 @@
 $(function () {
   $('a.ajax').live('click', function(e) {
     $.blockUI({ 
-      message: '<h1>Loading...</h1>',
-      css: { backgroundColor: '#f00', color: '#fff'},
+      message: '<img src="assets/ajax-loader.gif" />',
+      css: { backgroundColor: 'transparent', border: 'none'},
       overlayCSS: { backgroundColor: '#000', opacity: 0.7 }
     });   
     e.preventDefault();    
