@@ -4,7 +4,7 @@
  * Created: 2012/07/16
  */
 
-/* ajax functionality */
+/* AJAX FUNCTIONALITY */
 $(function () {
   $('a.ajax').live('click', function(e) {
     $.blockUI({ 
@@ -24,19 +24,23 @@ $(function () {
     $.getScript(location.href);
   });
 });
-/* end ajax functionality */
+/* END AJAX FUNCTIONALITY */
 
-/* block user and display overlay during ajax requests */
-/*
-$(function() {
-  $(document).ajaxStart($.blockUI({ message: '<h1>Just a moment...</h1>' })).ajaxStop($.unblockUI);
-});
-*/
-/* end block user */
-
-/* twitter bootstrap carousel */
+/* TWITTER BOOTSTRAP CAROUSEL */
 $(function() {
   $('.carousel').carousel({
     interval: 5000
-  })
+  });
 })
+/* END TWITTER BOOTSTRAP CAROUSEL */
+
+/* JQUERY COLORBOX */
+$(function() {
+  $(".colorbox").colorbox({
+    rel: 'group3',
+    transition: 'elastic',
+    width:"75%",
+    height:"75%"    
+  });
+})
+/* END JQUERY COLORBOX */

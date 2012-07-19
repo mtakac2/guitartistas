@@ -1,5 +1,5 @@
 class Album < ActiveRecord::Base
-  attr_accessible :description, :title, :cover_photo_id
+  attr_accessible :description, :title, :cover_photo_id, :slug  
   
   has_many :photos, :dependent => :destroy
 
@@ -12,5 +12,9 @@ class Album < ActiveRecord::Base
       cover_photo = self.photos.first
     end
     cover_photo
-  end  
+  end
+
+  def create_slug
+    title.downcase.split.join('-')
+  end
 end

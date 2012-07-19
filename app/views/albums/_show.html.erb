@@ -1,0 +1,21 @@
+<!-- breadcrumbs -->
+<ul class="breadcrumb">
+  <li>
+    <%= link_to 'Home', root_path %> <span class="divider">/</span>
+  </li>
+  <li class="active">Events</li>
+</ul>
+
+
+<section class="album clearfix">
+
+  <header>      
+    <h2><%= @album.title %></h2>
+    <span><%= @album.photos.count %> photos</span>
+  </header>
+
+  <% @album.photos.each do |photo| %>
+    <%= link_to(image_tag(photo.image_url(:thumb).to_s), photo.image_url(:norm),
+      :class => 'colorbox', :title => photo.caption) %>
+  <% end %>
+</section>

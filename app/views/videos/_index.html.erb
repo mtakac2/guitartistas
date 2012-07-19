@@ -1,0 +1,42 @@
+<!-- breadcrumbs -->
+<ul class="breadcrumb">
+  <li>
+    <%= link_to 'Home', root_path %> <span class="divider">/</span>
+  </li>
+  <li class="active">Videos</li>
+</ul>
+
+<nav class="vertical small left well">
+  <ul class="nav nav-pills nav-stacked">    
+    <li>
+      <a href="/multimedia/gallery" class="ajax">
+        <i class="icon-circle-arrow-right icon-white"></i>
+        Gallery                
+      </a>
+    </li>
+    <li>
+      <a href="/multimedia/videos" class="ajax">
+        <i class="icon-circle-arrow-right icon-white"></i>
+        Videos                
+      </a>
+    </li>
+    <li>
+      <a href="/multimedia/recordings" class="ajax">
+        <i class="icon-circle-arrow-right icon-white"></i>
+        Recordings                
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<article id="gallery" class="large right clearfix">
+  <% @videos.each do |video| %>
+    <div>
+      <h2><%= video.title %></h2>
+      <p><%= video.description %></p>
+      <%= video.url.html_safe %>      
+    </div>    
+    <hr>
+  <% end %>  
+  
+</article>

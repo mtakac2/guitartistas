@@ -1,0 +1,47 @@
+<!-- breadcrumbs -->
+<ul class="breadcrumb">
+  <li>
+    <%= link_to 'Home', root_path %> <span class="divider">/</span>
+  </li>
+  <li class="active">Biographies</li>
+</ul>
+
+<nav class="vertical small left well">
+  <ul class="nav nav-pills nav-stacked">    
+    <li>
+      <a href="/multimedia/gallery" class="ajax">
+        <i class="icon-circle-arrow-right icon-white"></i>
+        Gallery                
+      </a>
+    </li>
+    <li>
+      <a href="/multimedia/videos" class="ajax">
+        <i class="icon-circle-arrow-right icon-white"></i>
+        Videos                
+      </a>
+    </li>
+    <li>
+      <a href="/multimedia/recordings" class="ajax">
+        <i class="icon-circle-arrow-right icon-white"></i>
+        Recordings                
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<article id="gallery" class="large right clearfix">
+  <% count = 0 %>
+  <% @albums.each do |album| %>
+    <div>
+      <% count += 1 %>
+      <% cover = album.get_cover_photo %>
+      <% if count % 3 == 0 %>
+        <%= link_to(image_tag(album.get_cover_photo.image_url(:thumb).to_s, 
+          :class => 'frame last-in-row'), '#') %>
+      <% else %>
+        <%= link_to(image_tag(album.get_cover_photo.image_url(:thumb).to_s, :class => 'frame'),
+          "/multimedia/gallery/albums/#{album.id}") %>
+      <% end %>      
+    </div>
+  <% end %>
+</article>

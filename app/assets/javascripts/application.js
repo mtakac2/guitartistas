@@ -16,4 +16,5 @@
 //= require jquery.blockui
 //= require bootstrap
 //= require plugins
+//= require jquery.colorbox-min.js
 //= require custom

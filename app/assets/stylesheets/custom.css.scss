@@ -102,6 +102,21 @@ ul.breadcrumb {
   }
 }
 
+article#gallery {
+  
+  div {
+    display: inline-block;
+  }
+}
+
 img {
   margin: 0 10px 5px 0;  
+}
+
+img.frame {
+  background-color: #efefef;
+  padding: 3px;
+  border: 1px solid #ddd;
+  margin-right: 5.8%;
+  margin-bottom: 32px;
 }
