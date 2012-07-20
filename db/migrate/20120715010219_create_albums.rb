@@ -21,7 +21,7 @@ class CreateAlbums < ActiveRecord::Migration
 
   def down
     execute <<-SQL
-      DROP TABLE abums CASCADE;
+      DROP TABLE albums CASCADE;
     SQL
   end
 end

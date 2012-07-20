@@ -28,6 +28,8 @@ class CreatePhotos < ActiveRecord::Migration
         DROP CONSTRAINT fk_photos_albums        
     SQL
 
-    drop_table :photos
+    execute <<-SQL
+      DROP TABLE photos CASCADE;
+    SQL
   end
 end
