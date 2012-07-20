@@ -32,18 +32,20 @@
 </nav>
 
 <article id="videos" class="large right clearfix">
-  <h1>Videos</h1>
-  <% unless @videos.nil? %>
-    <% @videos.each do |video| %>
-      <div>
-        <h2><%= video.title %></h2>
-        <p><%= video.description %></p>
-        <%= video.url.html_safe %>      
-      </div>    
-      <hr>
-    <% end %>
-  <% else %>
-    <h2>There currently aren't any videos. Please come back later.</h2>
-  <% end %>
+  <h1>Videos</h1>    
+  <div>
+    <iframe width="560" height="315" src="http://www.youtube.com/embed/5GU76wUeXcw" frameborder="0" allowfullscreen></iframe>
+  </div>    
+  <hr>
+
+  <div>
+    <iframe width="560" height="315" src="http://www.youtube.com/embed/3tKPCYdmAp0" frameborder="0" allowfullscreen></iframe>
+  </div>    
+  <hr>
+
+  <div>    
+    <iframe width="560" height="315" src="http://www.youtube.com/embed/B-kQ2UidknI" frameborder="0" allowfullscreen></iframe>
+  </div>    
+  <hr>
   
 </article>
