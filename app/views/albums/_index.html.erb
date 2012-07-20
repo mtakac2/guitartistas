@@ -6,6 +6,8 @@
   <li class="active">Biographies</li>
 </ul>
 
+<h1>Multimedia</h1>
+
 <nav class="vertical small left well">
   <ul class="nav nav-pills nav-stacked">    
     <li>
@@ -30,18 +32,23 @@
 </nav>
 
 <article id="gallery" class="large right clearfix">
-  <% count = 0 %>
-  <% @albums.each do |album| %>
-    <div>
-      <% count += 1 %>
-      <% cover = album.get_cover_photo %>
-      <% if count % 3 == 0 %>
-        <%= link_to(image_tag(album.get_cover_photo.image_url(:thumb).to_s, 
-          :class => 'frame last-in-row'), '#') %>
-      <% else %>
-        <%= link_to(image_tag(album.get_cover_photo.image_url(:thumb).to_s, :class => 'frame'),
-          "/multimedia/gallery/albums/#{album.id}") %>
-      <% end %>      
-    </div>
-  <% end %>
+  <h1>Gallery</h1>
+  <% unless @albums.nil? %>
+    <% count = 0 %>
+    <% @albums.each do |album| %>
+      <div>
+        <% count += 1 %>
+        <% cover = album.get_cover_photo %>
+        <% if count % 3 == 0 %>
+          <%= link_to(image_tag(album.get_cover_photo.image_url(:thumb).to_s, 
+            :class => 'frame last-in-row'), '#') %>
+        <% else %>
+          <%= link_to(image_tag(album.get_cover_photo.image_url(:thumb).to_s, :class => 'frame'),
+            "/multimedia/gallery/albums/#{album.id}") %>
+        <% end %>      
+      </div>
+    <% end %>
+  <% else %>
+    <h2>There currently aren't any albums. Please come back later.</h2>
+  <% end %>  
 </article>

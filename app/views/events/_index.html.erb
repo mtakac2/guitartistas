@@ -6,21 +6,27 @@
   <li class="active">Events</li>
 </ul>
 
-<% @events.each do |event| %>
-  <article class="event clearfix">
-    <header>      
-    <h2><%= event.title %></h2>              
-    </header>
+<h1>Events</h1>
 
-    <% unless event.image.blank? %>
-      <%= link_to(image_tag(event.image_url(:thumb).to_s, 
-        :class => 'frame left'), '#') %>
-    <% end %>
+<% unless @events.nil? %>
+  <% @events.each do |event| %>
+    <article class="event clearfix">
+      <header>      
+      <h2><%= event.title %></h2>              
+      </header>
 
-    <span><%= event.start_time %></span>
+      <% unless event.image.blank? %>
+        <%= link_to(image_tag(event.image_url(:thumb).to_s, 
+          :class => 'frame left'), '#') %>
+      <% end %>
 
-    <p>
-      <%= event.description %>
-    </p>
-  </article>
+      <span><%= event.start_time.to_formatted_s(:long) %></span>
+
+      <p>
+        <%= event.description %>
+      </p>
+    </article>
+  <% end %>
+<% else %>
+  <h2>There currently aren't any events. Please come back later.</h2>
 <% end %>

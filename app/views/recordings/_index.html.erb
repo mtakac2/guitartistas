@@ -3,7 +3,7 @@
   <li>
     <%= link_to 'Home', root_path %> <span class="divider">/</span>
   </li>
-  <li class="active">Videos</li>
+  <li class="active">Recordings</li>
 </ul>
 
 <h1>Multimedia</h1>
@@ -31,19 +31,7 @@
   </ul>
 </nav>
 
-<article id="videos" class="large right clearfix">
-  <h1>Videos</h1>
-  <% unless @videos.nil? %>
-    <% @videos.each do |video| %>
-      <div>
-        <h2><%= video.title %></h2>
-        <p><%= video.description %></p>
-        <%= video.url.html_safe %>      
-      </div>    
-      <hr>
-    <% end %>
-  <% else %>
-    <h2>There currently aren't any videos. Please come back later.</h2>
-  <% end %>
-  
+<article id="recordings" class="large right clearfix">
+  <h1>Recordings</h1>
+  <h2>There currently aren't any recordings. Please come back later.</h2>
 </article>

@@ -13,7 +13,8 @@ Guitartistas::Application.routes.draw do
   match 'events'                        => 'events#index'
   match 'multimedia/gallery'            => 'albums#index'
   match 'multimedia/gallery/albums/:id' => 'albums#show'
-  match 'multimedia/videos'             => 'videos#index'  
+  match 'multimedia/videos'             => 'videos#index'
+  match 'multimedia/recordings'         => 'recordings#index'
   match 'contact'                       => 'emails#new'
-  match 'emails/create'                  => 'emails#create', :via => :post
+  match 'emails/create'                 => 'emails#create', :via => :post
 end

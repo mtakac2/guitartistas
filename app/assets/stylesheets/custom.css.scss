@@ -38,6 +38,10 @@
 // Utility classes
 @import "bootstrap/utilities"; // Has to be last to override when necessary
 
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 16px;
+}
+
 body {
   background-color: #1C1121;
 }
