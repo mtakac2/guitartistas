@@ -22,22 +22,22 @@
     </div>
   <% end %>
 
-  <p>
-    <%= f.label :name %><br />
+  <div>
+    <%= f.label :name %>
     <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
+  </div>
+  <div>
+    <%= f.label :email %>
     <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :subject %><br />
+  </div>
+  <div>
+    <%= f.label :subject %>
     <%= f.text_field :subject %>
-  </p>
-  <p>
-    <%= f.label :message %><br />
+  </div>
+  <div>
+    <%= f.label :message %>
     <%= f.text_area :message %>
-  </p>
-  <p><%= f.submit "Send Message" %></p>
+  </div>
+  <p><%= f.submit "Send Message", :id => 'submit' %></p>
 <% end %>
 

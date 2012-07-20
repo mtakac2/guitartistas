@@ -1,3 +1,4 @@
 $('#main').html('<%= escape_javascript(render("index")) %>');
 document.title = "<%= escape_javascript("Biographies") %>";
 $('nav#main-menu a.active').attr('class', 'ajax');
+$('a#biographies').attr('class', 'ajax active');

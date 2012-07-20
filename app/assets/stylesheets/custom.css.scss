@@ -147,3 +147,18 @@ img.frame {
   margin-right: 5.8%;
   margin-bottom: 32px;
 }
+
+form#new_email {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;  
+
+  input, textarea {
+    width: 100%;
+
+    &#submit {
+      width: 20%;
+      color: #1C1121;
+    }
+  }  
+}
