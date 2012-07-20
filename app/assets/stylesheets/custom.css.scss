@@ -87,8 +87,12 @@ nav.vertical {
         text-decoration: none;
         font-weight: bold;
 
+        &.active {
+          background-color: #3A2A52 !important;
+        }
+
         &:hover {
-          background-color: #D76A74 !important;
+          background-color: #3A2A52 !important;
         }
 
         i {

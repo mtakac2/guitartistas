@@ -10,12 +10,19 @@
 
 <nav class="vertical small left well">
   <ul class="nav nav-pills nav-stacked">
-    <% @biographies.each do |biography| %>
-      <li>
-        <a href="/biographies/<%= biography.slug %>" class="ajax">
-          <i class="icon-circle-arrow-right icon-white"></i>
-          <%= biography.title %>
-        </a>
+    <% @biographies.each do |biography| %>      
+      <li>   
+        <% if request.path.split('/')[2] == biography.slug %>
+          <a href="/biographies/<%= biography.slug %>" class="ajax active" id="<%= biography.title %>">
+            <i class="icon-circle-arrow-right icon-white"></i>
+            <%= biography.title %>
+          </a>
+        <% else %>
+          <a href="/biographies/<%= biography.slug %>" class="ajax" id="<%= biography.title %>">
+            <i class="icon-circle-arrow-right icon-white"></i>
+            <%= biography.title %>
+          </a>
+        <% end %>        
       </li>
     <% end %>
   </ul>

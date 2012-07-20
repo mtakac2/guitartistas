@@ -1,4 +1,4 @@
 $('#main').html('<%= escape_javascript(render("new")) %>');
 document.title = "<%= escape_javascript("Contact") %>"
-$('a.active').attr('class', 'ajax');
+$('nav#main-menu a.active').attr('class', 'ajax');
 $('a#contact').attr('class', 'ajax active');
