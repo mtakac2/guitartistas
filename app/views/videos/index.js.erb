@@ -1,2 +1,4 @@
 $('#main').html('<%= escape_javascript(render("index")) %>');
 document.title = "<%= escape_javascript("Videos") %>"
+$('a.active').attr('class', 'ajax');
+$('a#multimedia').attr('class', 'ajax active');

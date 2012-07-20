@@ -1,9 +1,14 @@
 <nav id="main-menu" class="horizontal">
   <ul>
-    <li><%= link_to 'Home', root_path, :class => 'ajax active' %></li>
-    <li><%= link_to 'Bios',  '/biographies', :class => 'ajax' %></li>
-    <li><%= link_to 'Events', '/events', :class => 'ajax' %></li>
-    <li><%= link_to 'Multimedia',   '/multimedia/gallery', :class => 'ajax' %></li>
-    <li><%= link_to 'Contact',   '/contact', :class => 'ajax' %></li>
+    <li><%= link_to 'Home', root_path, :class => 
+      (request.path == '/') ? 'ajax active' : 'ajax', :id => 'home' %></li>
+    <li><%= link_to 'Bios',  '/biographies', :class => 
+      (request.path.split('/')[1] == 'biographies') ? 'ajax active' : 'ajax', :id => 'biographies' %></li>
+    <li><%= link_to 'Events', '/events', :class => 
+      (request.path.split('/')[1] == 'events') ? 'ajax active' : 'ajax', :id => 'events' %></li>
+    <li><%= link_to 'Multimedia',   '/multimedia/gallery', :class => 
+      (request.path.split('/')[1] == 'multimedia') ? 'ajax active' : 'ajax', :id => 'multimedia' %></li>
+    <li><%= link_to 'Contact',   '/contact', :class => 
+      (request.path.split('/')[1] == 'contact') ? 'ajax active' : 'ajax', :id => 'contact' %></li>
   </ul>
 </nav>

@@ -1,2 +1,4 @@
 $('#main').html('<%= escape_javascript(render("home")) %>');
 document.title = "<%= escape_javascript("Home") %>"
+$('a.active').attr('class', 'ajax');
+$('a#home').attr('class', 'ajax active');
