@@ -32,8 +32,7 @@
 </nav>
 
 <article id="gallery" class="large right clearfix">
-  <h1>Gallery</h1>
-  <% if !@albums.nil? %>
+  <h1>Gallery</h1>  
     <% count = 0 %>
     <% @albums.each do |album| %>
       <div>
@@ -47,8 +46,5 @@
             "/multimedia/gallery/albums/#{album.id}") %>
         <% end %>      
       </div>
-    <% end %>
-  <% else %>
-    <h2>There currently aren't any albums. Please come back later.</h2>
-  <% end %>  
+    <% end %>  
 </article>
