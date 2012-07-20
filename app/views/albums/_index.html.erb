@@ -33,7 +33,7 @@
 
 <article id="gallery" class="large right clearfix">
   <h1>Gallery</h1>
-  <% unless @albums.nil? %>
+  <% if !@albums.nil? %>
     <% count = 0 %>
     <% @albums.each do |album| %>
       <div>
